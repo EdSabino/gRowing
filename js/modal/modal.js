@@ -1,7 +1,6 @@
 (function() {
 
 	this.Modal = function() {
-
 		this.closeButton = null;
 		this.modal = null;
 		this.overlay = null;
@@ -53,6 +52,7 @@
 		// adiciona a classe de abertura ao modal e ao overlay
 		this.modal.className = this.modal.className + temp_class;
 		this.overlay.className = this.overlay.className + " modal-open"
+		setForm.call(this);
 	}
 
 	Modal.prototype.close = function() {
@@ -74,6 +74,10 @@
 		});
 	}
 
+	function setForm() {
+		$(this.modal.getElementsByClassName("holder")[0].getElementsByTagName("form")[0].getElementsByTagName("input")[0]).focus();
+	}
+
 	function extendDefault(source, properties) {
 		var property;
 		// vai rodar por todos os argumentos que foram passados em forma de objeto {}, se fr uma propriedade valida e suportavel, 
@@ -91,13 +95,7 @@
 		// É no docFrag que o modal é construido, é ele que é colocado na tela, content, é o content neh
 		var content, contentHolder, docFrag;
 
-		// Ok, basicamente, se o content for uma string, é soa adicionar, se for um html vai adicionar os filhos do mesmo
-		if (typeof this.options.content === "string") {
-			content = this.options.content;
-		} else {
-			content = this.options.content.innerHTML;
-		}
-
+		content = this.options.content;
 		// cria o fragmento
 		docFrag = document.createDocumentFragment();
 
@@ -109,9 +107,9 @@
 
 		// cria o botão de fechar e o adicionar ao modal
 		if (this.options.closeButton === true) {
-			this.closeButton = document.createElement("button");
+			this.closeButton = document.createElement("span");
 			this.closeButton.className = this.options.closeButtonClass;
-			this.closeButton.innerHTML = "x";
+			this.closeButton.innerHTML = "\&times;";
 			// adiciona ao modal
 			this.modal.appendChild(this.closeButton);
 		}
@@ -127,7 +125,7 @@
 		// e adiciona o content holder no this.modal
 		contentHolder = document.createElement("div");
 		contentHolder.className = "holder";
-		contentHolder.innerHTML = content;
+		contentHolder.appendChild(content);
 		this.modal.appendChild(contentHolder);
 
 		// adiciona o this.modal ao fragmento

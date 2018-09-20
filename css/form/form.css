@@ -1,0 +1,77 @@
+.form-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0.5%;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.form-col {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 1 auto;
+}
+
+.input {
+	border-radius: .25rem;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--grey);
+	min-width: 5%;
+	color: var(--black);
+	padding: 10px;
+	font-size: 16px;
+	margin-right: 9px;
+	margin-bottom: 6px;
+	flex: 1 1 auto;
+	-webkit-transition: 1ms opacity ease;
+	-moz-transition: 1ms opacity ease;
+	-ms-transition: 1ms opacity ease;
+	-o-transition: 1ms opacity ease;
+	transition: 1ms opacity ease;
+}
+
+.input:focus {
+	outline: none !important;
+    border-color: var(--blue-focus);
+    box-shadow: 0 0 10px var(--blue-focus);
+    -webkit-transition: 1ms opacity ease;
+	-moz-transition: 1ms opacity ease;
+	-ms-transition: 1ms opacity ease;
+	-o-transition: 1ms opacity ease;
+	transition: 1ms opacity ease;
+}
+
+.label {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 18px;
+	width: 100%;
+	margin-bottom: 5px;
+	margin-left: 2px;
+}
+
+.required::after {
+	content: "*";
+	color: red;
+}
+
+.w-25 {
+	width: 25%;
+}
+
+.w-50 {
+	width: 50%;
+}
+
+.w-75 {
+	width: 75%;
+}
+
+.w-100 {
+	width: 99%;
+}
+
+.inline {
+	display: inline-block;
+}

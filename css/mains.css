@@ -1,0 +1,13 @@
+:root {
+	font-family: Arial, Helvetica, sans-serif !important;
+	--grey: #ced4da;
+	--black: #495057;
+	--blue-focus: #719ECE;
+	--white: #fff;
+	--green: #2eb82e;
+	--green-hover: #009933;
+}
+
+.hide {
+	display: none;
+}

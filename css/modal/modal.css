@@ -22,7 +22,7 @@
 	left: 50%;
 	opacity: 0;
 	border-radius: 4px;
-	background: #fff;
+	background: var(--white);
 
 	-webkit-transition: 1ms opacity ease;
 	-moz-transition: 1ms opacity ease;
@@ -65,20 +65,16 @@
 	right: 5px;
 	padding: 5px 5px 7px;
 	cursor: pointer;
-	color: #fff;
-	border-radius: 2px;
-	border-color: #d82929;
-	border: 0;
-	border-style: solid;
-	outline: none;
-	background: #d82929;
+	color: var(--black);
+	margin: 6px;
 }
 
 .close-btn:hover {
-	background: #c0392b;
+	filter: brightness(50%);
 }
 
 .holder {
+	margin-top: 15px;
 	padding: 15px 15px 15px 15px;
 }
 

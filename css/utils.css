@@ -1,0 +1,44 @@
+.btn {
+	border: 1px solid transparent;
+	border-radius: .25rem;
+	padding: 6px;
+	padding-right: 9px;
+	padding-left: 9px;
+	color: var(--white);
+
+	-webkit-transition: 1ms ease-in-out;
+	-moz-transition: 1ms ease-in-out;
+	-ms-transition: 1ms ease-in-out;
+	-o-transition: 1ms ease-in-out;
+	transition: 5ms ease-in-out;
+}
+
+.btn:hover {
+	cursor: pointer;
+
+	-webkit-transition: 1ms ease-in-out;
+	-moz-transition: 1ms ease-in-out;
+	-ms-transition: 1ms ease-in-out;
+	-o-transition: 1ms ease-in-out;
+	transition: 5ms ease-in-out;
+}
+
+.btn-green {
+	background-color: var(--green);
+
+	-webkit-transition: 1ms ease-in-out;
+	-moz-transition: 1ms ease-in-out;
+	-ms-transition: 1ms ease-in-out;
+	-o-transition: 1ms ease-in-out;
+	transition: 5ms ease-in-out;
+}
+
+.btn-green:hover {
+	background-color: var(--green-hover);
+
+	-webkit-transition: 1ms ease-in-out;
+	-moz-transition: 1ms ease-in-out;
+	-ms-transition: 1ms ease-in-out;
+	-o-transition: 1ms ease-in-out;
+	transition: 5ms ease-in-out;
+}

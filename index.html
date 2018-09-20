@@ -1,26 +1,47 @@
 <html>
 <head>
-	<title>Modal Example</title>
-	<link rel="stylesheet" href="modal_css.css">
+	<title>Growing</title>
+	<link rel="stylesheet" href="css/modal/modal.css">
+	<link rel="stylesheet" href="css/form/form.css">
+	<link rel="stylesheet" href="css/slide_show/slide_show.css">
+	<link rel="stylesheet" href="css/utils.css">
+	<link rel="stylesheet" href="css/mains.css">
 </head>
 	<body>
-		<button id="trigger" class="trigger-button" type="button">Launch Modal</button>
+		<!-- <button id="trigger" class="btn btn-green"><div class="hover"></div><span class="inner-text-btn">click here</span></button>
+		<div id="content" class="hide">
+			<form action="">
+				<div class="form-row w-100">
+					<div class="form-col">
+						<label for="name" class="label required">Nome</label>
+						<input type="text" placeholder="nome" id="name" class="input">
+					</div>
+				</div>
+				<div class="w-100 form-row">
+					<div class="form-col">
+						<label for="telefone" class="label">Telefone</label>
+						<input type="text" placeholder="telefone" id="telefone" class="input">
+					</div>
+					<div class="form-col">
+						<label for="email" class="label">Email</label>
+						<input type="text" placeholder="email" id="email" class="input">
+					</div>
+				</div>
+			</form>
+		</div> -->
 
-		<div id="content">
-			<h1>Look at me!</h1>
-			<p>I'm a modal window.</p>
+		<!-- SlideShow -->
+
+		<!-- Slideshow container -->
+		<div class="w-100 slide_show">
+			
+		
 		</div>
-		<script src="modal.js" type="text/javascript" charset="utf-8"></script>
-		<script>
-			var myContent = document.getElementById('content');
-			var myModal = new Modal({
-				content: myContent
-			});
-			var triggerButton = document.getElementById('trigger');
 
-			triggerButton.addEventListener('click', function() {
-				myModal.open();
-			});
-		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/modal/modal.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/modal/modal-jq.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/slide_show/slide_show.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
