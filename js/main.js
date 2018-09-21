@@ -5,5 +5,13 @@ $("#slide_show").slide_show({
 });
 
 $("#trigger").on('click', function(){
-	$("#message").notify();
+	$("#content").modal();
 });
+
+$("#content").formFormat();
+
+var mask = new Mask({
+	autoExecute: false,
+	format: "(00) 00000-0000",
+	target: "name"
+})
