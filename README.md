@@ -46,4 +46,5 @@ Slides
 		onde #slide_show é o destino
 	
 
-	Se nenhuma url for passada(como nos exemplos acima), ele vai buscar nos filhos da div destino pelas imagens, e usar as que estão la
+	Se nenhuma url for passada(como nos exemplos acima), ele vai buscar nos filhos da div destino 
+	pelas imagens, e usar as que estão la
