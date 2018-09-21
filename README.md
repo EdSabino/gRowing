@@ -12,15 +12,27 @@ Atualmente ha quatro modulos, ainda em expansão, são eles:
 Slides
 	O modulo de slides por enquanto possui somente um modo, o banner,
 	suas opções são:
-			target:       //=> indica em qual div deve ser colocado os slides
-			imagesUrl:    //=> caminho das imagens
-			auto:         //=> se os slides devem passar automaticamente
-			timeAuto:     //=> a cada quanto tempo os slides devem mudar
-			autoExecute:  //=> indica se deve executar após estanciar a classe
-			slideCount:   //=> diz se deve ter o contador de slides
-			dots:         //=> indica se deve ter as bolinahs em baixo
+			
+			//=> indica em qual div deve ser colocado os slides
+			target:       
 
-	Se nenhuma url for passada, ele vai buscar nos filhos da div destino pelas imagens, e usar as que estão la
+			//=> caminho das imagens
+			imagesUrl:    
+			
+			//=> se os slides devem passar automaticamente
+			auto:         
+			
+			//=> a cada quanto tempo os slides devem mudar
+			timeAuto:     
+			
+			//=> indica se deve executar após estanciar a classe
+			autoExecute:  
+			
+			//=> diz se deve ter o contador de slides
+			slideCount:   
+
+			//=> indica se deve ter as bolinahs em baixo
+			dots:         
 
 	Seu uso em JavaScript puro é mais ou menos assim:
 		var mySlide = new SlideShow({
@@ -32,4 +44,6 @@ Slides
 			// Aqui vem as opções
 		});
 		onde #slide_show é o destino
-		
+	
+
+	Se nenhuma url for passada(como nos exemplos acima), ele vai buscar nos filhos da div destino pelas imagens, e usar as que estão la
