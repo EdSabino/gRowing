@@ -1,5 +1,3 @@
-
-
 (function() {
 	var slideIndex = 0
 
@@ -8,26 +6,40 @@
 		var defaults = {
 			target: '',
 			imagesUrl: [],
+			auto: false, 
+			timeAuto: 3000,
+			autoExecute: false,
+			slideCount: true,
+			dots: true,
 		}
 
 		if (arguments[0] && typeof arguments[0] === "object") {
 			this.options = extendDefault(defaults, arguments[0]);
 		}
-
-		this.execute();
+		if (this.options.imagesUrl.length == 0) {
+			findBySons.call(this);
+		}
+		if (this.options.autoExecute == true) {
+			this.execute();
+		}
 	}
 
 	SlideShow.prototype.execute = function() {
 		buildOut.call(this);
 		showSlides(0);
+		if (this.options.auto == true) {
+			setSlideTime.call(this);
+		}
 	}
 
 	function buildOut() {
 		var container = buildSlide.call(this);
-		var dots = buildDots.call(this);
-		var target = document.getElementsByClassName(this.options.target)[0];
+		if (this.options.dots){
+			var dots = buildDots.call(this);
+		}
+		var target = document.getElementById(this.options.target);
 		target.appendChild(container);
-		target.appendChild(dots);
+		if (this.options.dots) {target.appendChild(dots);}
 	}
 
 	function buildDots() {
@@ -57,7 +69,7 @@
 			slide.classList.add("mySlides");
 			slide.classList.add("fade");
 			number.classList.add("numbertext");
-			number.innerHTML = (i+1) + "/" + this.options.imagesUrl.length;
+			if (this.options.slideCount) {number.innerHTML = (i+1) + "/" + this.options.imagesUrl.length;}
 			image.classList.add("img-wrap");
 			image.setAttribute("src", this.options.imagesUrl[i])
 			slide.appendChild(number);
@@ -93,7 +105,16 @@
 		return source;
 	}
 
-
+	function findBySons() {
+		var target = document.getElementById(this.options.target);
+		var images = target.getElementsByTagName("img")
+		for (var i = 0; i < images.length; i++) {
+			this.options.imagesUrl.push(images[i].getAttribute("src"))
+		}
+		while (target.firstChild) {
+			target.removeChild(target.firstChild);
+		}
+	}
 
 	// Next/previous controls
 	function plusSlides(n) {
@@ -126,4 +147,13 @@
 		}
 		slideIndex = position
 	}
+
+	function setSlideTime() {
+		var that = this
+		setTimeout(function() {
+			plusSlides(1)
+			setSlideTime.call(that)
+		}, that.options.timeAuto);
+	}
+
 })();
