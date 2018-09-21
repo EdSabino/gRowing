@@ -5,7 +5,9 @@ $("#slide_show").slide_show({
 });
 
 $("#trigger").on('click', function(){
-	$("#content").modal();
+	$("#message").notify({
+		type: "red"
+	});
 });
 
 $("#content").formFormat();

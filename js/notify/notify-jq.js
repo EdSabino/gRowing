@@ -1,8 +1,10 @@
 (function($) {
 	$.fn.notify = function(options) {
 
-		if (options == undefined || options.message == undefined){
+		if (options == undefined){
 			var options = {}
+		}
+		if (options.message == undefined) {
 			options.message = this[0].innerHTML
 		}
 		var opts = $.extend({
@@ -10,7 +12,11 @@
 			type: "green",
 			message: "",
 			autoExecute: true,
-			animation: "fade-n-drop"
+			animation: "fade-n-drop",
+			classMessage: "",
+			position: "top",
+			autoDissmiss: true,
+			timeDissmiss: 5000,
 		}, options );
 
 		var myNotify = new Notify(opts);

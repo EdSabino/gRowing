@@ -12,7 +12,11 @@
 			type: "green",
 			message: "",
 			autoExecute: false,
-			animation: "fade-n-drop"
+			animation: "fade-n-drop",
+			classMessage: "",
+			position: "top",
+			autoDissmiss: true,
+			timeDissmiss: 5000,
 		}
 
 		if (arguments[0] && typeof arguments[0] === "object") {
@@ -22,6 +26,7 @@
 		if (this.options.autoExecute) {
 			this.open();
 		}
+		if(this.options.autoDissmiss) {setDissmiss.call(this);}
 	}
 
 	Notify.prototype.open = function() {
@@ -37,6 +42,11 @@
 		this.holder.addEventListener(this.transitionEnd, function() {
 			that.holder.parentNode.removeChild(that.holder);
 		});
+	}
+
+	function setDissmiss() {
+		var that = this
+		window.setTimeout( function() { that.close() }, that.options.timeDissmiss );
 	}
 
 	function extendDefault(source, properties) {
@@ -65,12 +75,13 @@
 		var holder = document.createElement("div");
 		holder.className = this.options.animation + " box-notify float-notify"
 		holder.classList.add(this.options.type + "-notify");
+		holder = setPosition.call(this, holder);
 		return holder
 	}
 
 	function buildMessage() {
 		var message = document.createElement("div");
-		message.classList.add("message-notify-float");
+		message.className = this.options.classMessage + " message-notify-float";	
 		message.innerHTML = this.options.message
 		return message
 	}
@@ -80,6 +91,17 @@
 		closeButton.setAttribute("class", "close-notify");
 		closeButton.innerHTML = "\&times;"
 		return closeButton
+	}
+
+	function setPosition(holder) {
+		debugger;
+		if (this.options.position.split("-").length > 1) {
+			holder.classList.add(this.options.position.split("-")[0])
+			holder.classList.add(this.options.position.split("-")[1])
+		}else {
+			holder.classList.add(this.options.position.split("-")[0])
+		}
+		return holder
 	}
 
 	function setListener() {
