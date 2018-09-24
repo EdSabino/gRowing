@@ -6,7 +6,7 @@ $("#slide_show").slide_show({
 
 $("#trigger").on('click', function(){
 	$("#message").notify({
-		type: "red"
+		type: "green"
 	});
 });
 
