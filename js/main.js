@@ -1,19 +1,14 @@
-$("#slide_show").slide_show({
-	auto: true,
-	slideCount: false,
-	dots: true
+const carousel = new Carousel({
+	target: '#carousel',
+	imagesUrl: [
+		'css/slide_show/img1.jpg',
+		'css/slide_show/img2.jpg',
+		'css/slide_show/img3.jpg'
+	]
 });
 
 $("#trigger").on('click', function(){
-	$("#message").notify({
-		type: "green"
-	});
+	$("#content").modal();
 });
 
 $("#content").formFormat();
-
-var mask = new Mask({
-	autoExecute: false,
-	format: "(00) 00000-0000",
-	target: "name"
-})

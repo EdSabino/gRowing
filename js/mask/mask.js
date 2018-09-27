@@ -71,9 +71,10 @@
 	// }
 
 	function setListener() {
+		const that = this
 		this.target = document.getElementById(this.options.target);
-		this.target.addEventListener('change', function() {
-			debugger;
+		this.target.addEventListener('keyup', function() {
+			that.replaceCheck();
 		});
 	}
 
