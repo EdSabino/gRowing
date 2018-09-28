@@ -2,11 +2,14 @@
 	font-family: Arial, Helvetica, sans-serif !important;
 	--grey: #ced4da;
 	--low-grey: #e9ecef;
+	--dark-grey: #b2b7bb;
 	--black: #495057;
 	--blue-focus: #719ECE;
 	--white: #fff;
 	--green: #2eb82e;
 	--green-hover: #009933;
+	--blacker: #32363a;
+	--dark-black: #111;
 }
 
 .hide {
