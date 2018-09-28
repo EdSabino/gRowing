@@ -13,15 +13,15 @@ body {
 .button-open-sidebar {
     width: 20px;
     height: 40px;
-    background-color: var(--blacker);
+    background-color: var(--not-so-black);
     border-bottom-right-radius: 100px;
     border-top-right-radius: 100px;
-    border: 0px solid var(--blacker);
+    border: 0px solid var(--not-so-black);
     border-left: 0;
     text-align: center;
     padding-left: 0px;
     font-size: 14px;
-    color: var(--white);
+    color: var(--darker-grey);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -32,7 +32,7 @@ body {
 }
 
 .button-open-sidebar:hover {
-    background-color: var(--dark-black);
+    color: var(--white)
 }
 
 .sidenav {
@@ -42,7 +42,7 @@ body {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: var(--dark-black); /* Black*/
+    background-color: var(--not-so-black); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -61,6 +61,14 @@ body {
 .item-nav:hover {
     background-color: var(--blacker);
     color: var(--white);
+}
+
+.drop-down-content {
+    background-color: var(--medium-grey);
+}
+
+.drop-item {
+    font-size: 16px;
 }
 
 .ico-down-style {

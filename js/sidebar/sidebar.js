@@ -27,6 +27,19 @@
         this.navbar.addEventListener("mouseover", showButton.bind(this));
         this.navbar.addEventListener("mouseout", hideButton.bind(this));
         this.buttonOpen.addEventListener("click", controlNav.bind(this));
+        setDropDowns.call(this);
+    }
+
+    function setDropDowns() {
+        let dropDowns = this.navbar.getElementsByClassName("drop-down");
+        for (let i = 0; i < dropDowns.length; i++) {
+            let actual = dropDowns[i];
+            actual.addEventListener("click", setDropDown.bind(this, actual));
+        }
+    }
+
+    function setDropDown(actual) {
+        actual.parentNode.getElementsByClassName("drop-down-content")[0].classList.toggle("hide")
     }
 
     function showButton(buttonOpen) {
@@ -41,13 +54,15 @@
         if (this.state == true) {
             this.navbar.style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
-            document.getElementById("side-button").innerHTML = ">"
+            document.getElementById("side-button").classList.remove("ico-left");
+            document.getElementById("side-button").classList.add("ico-right");
             this.hoverPlace.style.marginLeft = "0";
             this.state = false
         }else {
             this.navbar.style.width = "250px";
             document.getElementById("main").style.marginLeft = "250px";
-            document.getElementById("side-button").innerHTML= "<"
+            document.getElementById("side-button").classList.add("ico-left");
+            document.getElementById("side-button").classList.remove("ico-right");
             this.hoverPlace.style.marginLeft = "250px";
             this.state = true
         }

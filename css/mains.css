@@ -9,8 +9,10 @@
 	--white: #fff;
 	--green: #2eb82e;
 	--green-hover: #009933;
-	--blacker: #32363a;
+	--blacker: #353535;
 	--dark-black: #111;
+	--not-so-black: #2b2a2a;
+	--medium-grey: #444343;
 }
 
 .hide {
