@@ -16,7 +16,8 @@
 			content: "",
 			maxWidth: 600,
 			minWidth: 280,
-			overlay: true
+			overlay: true,
+			afterExecute: []
 		}
 
 
@@ -53,6 +54,7 @@
 		this.modal.className = this.modal.className + temp_class;
 		this.overlay.className = this.overlay.className + " modal-open"
 		setForm.call(this);
+		afterExecute.call(this);
 	}
 
 	Modal.prototype.close = function() {
@@ -62,7 +64,7 @@
 		this.modal.className = this.modal.className.replace(" modal-open", "");
 		this.overlay.className = this.overlay.className.replace(" modal-open", "");
 
-		// Ok, essa parte é doida, não podemos fechar tudo antes da animação acabar, entao vms fazer um 
+		// Ok, essa parte é doida, não podemos fechar tudo antes da animação acabar, entao vms fazer um
 		// listener pra descobrir quando ela acaba
 		this.modal.addEventListener(this.transitionEnd, function() {
 			that.modal.parentNode.removeChild(that.modal);
@@ -80,7 +82,7 @@
 
 	function extendDefault(source, properties) {
 		var property;
-		// vai rodar por todos os argumentos que foram passados em forma de objeto {}, se fr uma propriedade valida e suportavel, 
+		// vai rodar por todos os argumentos que foram passados em forma de objeto {}, se fr uma propriedade valida e suportavel,
 		// ela sera reescrita
 		for (property in properties) {
 			// aqui valida
@@ -130,9 +132,17 @@
 
 		// adiciona o this.modal ao fragmento
 		docFrag.appendChild(this.modal);
-		
+
 		// coloca o fragmento no body
 		document.body.appendChild(docFrag);
+	}
+
+	function afterExecute() {
+		const functions = this.options.afterExecute;
+		for (let i = 0; i < functions; i++) {
+			let tmpFunc = new Function(functions[i]);
+			tmpFunc();
+		}
 	}
 
 	// Listeners
