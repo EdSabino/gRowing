@@ -55,6 +55,7 @@
     padding-top: 10px;
     border: 1px solid var(--grey);
     border-top: 0px;
+    transition: max-height 0.15s ease-out;
 }
 
 .last-text:not(.hide) {

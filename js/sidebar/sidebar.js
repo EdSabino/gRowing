@@ -39,7 +39,8 @@
     }
 
     function setDropDown(actual) {
-        actual.parentNode.getElementsByClassName("drop-down-content")[0].classList.toggle("hide")
+        let container = actual.parentNode.getElementsByClassName("drop-down-content")[0]
+        container.classList.toggle("drop-open")
     }
 
     function showButton(buttonOpen) {

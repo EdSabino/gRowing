@@ -64,7 +64,17 @@ body {
 }
 
 .drop-down-content {
+    margin: 0px;
+    padding: 0px;
     background-color: var(--medium-grey);
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+}
+
+.drop-down-content.drop-open {
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
 }
 
 .drop-item {
