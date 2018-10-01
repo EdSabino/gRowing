@@ -1,3 +1,7 @@
+:root {
+	--error: #981a26;
+}
+
 .form-row {
 	display: flex;
 	flex-wrap: wrap;
@@ -116,4 +120,9 @@
 	color: red;
 }
 
-
+.error {
+	color: var(--error);
+	font-weight: bold;
+	width: 100%;
+	margin-top: 7px;
+}

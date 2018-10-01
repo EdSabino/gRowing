@@ -68,7 +68,7 @@
 
 	function extendDefault(source, properties) {
 		var property;
-		// vai rodar por todos os argumentos que foram passados em forma de objeto {}, se fr uma propriedade valida e suportavel, 
+		// vai rodar por todos os argumentos que foram passados em forma de objeto {}, se fr uma propriedade valida e suportavel,
 		// ela sera reescrita
 		for (property in properties) {
 			// aqui valida
