@@ -64,7 +64,6 @@
 		// retira as classes de abertura
 		this.modal.className = this.modal.className.replace(" modal-open", "");
 		this.overlay.className = this.overlay.className.replace(" modal-open", "");
-		debugger;
 		// Ok, essa parte é doida, não podemos fechar tudo antes da animação acabar, entao vms fazer um
 		// listener pra descobrir quando ela acaba
 		this.modal.addEventListener(this.transitionEnd, function() {

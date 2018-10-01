@@ -35,7 +35,6 @@
 	function buildOutSlides() {
 		const container = buildSlide.call(this);
 		const bottomPart = buildBottomPart.call(this);
-		debugger;
 		var target = document.getElementById(this.options.target);
 		target.appendChild(container);
 		target.appendChild(bottomPart);
@@ -58,6 +57,7 @@
 		  let imageContent = document.createElement("div");
 		  let image = document.createElement("img")
 		  imageContent.classList.add("gallery-image");
+		  imageContent.classList.add("botton");
 		  imageContent.style.width = 100/this.options.imagesUrl.length + "%";
 		  imageContent.dataset.position = i;
 		  imageContent.addEventListener('click', function() {
@@ -77,6 +77,7 @@
 		for (let i = 0; i < this.options.imagesUrl.length; i++) {
 			var dot = document.createElement("span");
 			dot.classList.add("dot");
+			dot.classList.add("botton");
 			dot.dataset.position = i;
 			dot.addEventListener('click', function() {
 				currentSlide(this.dataset.position)
@@ -156,8 +157,8 @@
 	}
 
 	function showSlides(position) {
-		var slides = document.getElementsByClassName("mySlides");
-		var dots = document.getElementsByClassName("dot");
+		let slides = document.getElementsByClassName("mySlides");
+		let dots = document.getElementsByClassName("botton");
 		if (position < 0) {position = slides.length-1}
 		if (position > slides.length-1) {position = 0}
 		for (i = 0; i < slides.length; i++) {

@@ -55,7 +55,6 @@
         let fields = type.fields;
         for (let i = 0; i < fields.length; i++) {
             let field = document.getElementById(fields[i].slice(1));
-            debugger;
             this.formSubmit.addEventListener("click", validatePresence.bind(this, field));
         }
     }

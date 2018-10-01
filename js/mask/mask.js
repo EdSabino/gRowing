@@ -40,7 +40,6 @@
 
 	Mask.prototype.replaceCheck = function() {
 		let date = this.target.value;
-		debugger;
 		if (this.target.value.length <= this.options.format.length) {
 			if ( new RegExp(this.formats[0].substring(0, this.formats[0].length - 2) ).test(date))	 {
 				this.target.value += this.formats[0][this.formats[0].length-1];

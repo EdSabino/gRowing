@@ -95,7 +95,6 @@
 	}
 
 	function setPosition(holder) {
-		debugger;
 		if (this.options.position.split("-").length > 1) {
 			holder.classList.add(this.options.position.split("-")[0])
 			holder.classList.add(this.options.position.split("-")[1])
