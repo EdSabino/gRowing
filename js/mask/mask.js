@@ -1,14 +1,13 @@
-// (00) 00000 0000
 (function() {
 
 	this.Mask = function() {
-		this.format = "/^";
+		this.format = "";
 		this.count = 0;
 		this.firstDigit = "";
 		this.formats = [];
 		this.target = null;
 
-		var defaults = {
+		const defaults = {
 			autoExecute: false,
 			format: "",
 			target: ""
@@ -40,8 +39,25 @@
 	}
 
 	Mask.prototype.replaceCheck = function() {
-		var date = this.target.value;
+		let date = this.target.value;
 		debugger;
+		if (this.target.value.length <= this.options.format.length) {
+			if ( new RegExp(this.formats[0].substring(0, this.formats[0].length - 2) ).test(date))	 {
+				this.target.value += this.formats[0][this.formats[0].length-1];
+				this.formats.splice(0,1);
+				if (this.formats[0][this.formats[0].length-4] == "0") {
+					this.replaceCheck();
+				}
+			}else {
+				if (this.formats.length == 1) {
+					if (new RegExp(this.formats[0] ).test(date)) {
+						this.completed = true;
+					}
+				}
+			}
+		}else {
+			this.target.value = this.target.value.substring(0, this.target.value.length - 1)
+		}
 	}
 
 	function buildRegex() {
@@ -58,24 +74,37 @@
 	}
 
 	function buildValue() {
-		var value = "\\d{0}"
+		var value = "\\w{0}"
 		value = value.replace("0", this.count);
 		return value
 	}
 
-	// var date = this.value;
-	// if (date.match(/^\d{4}$/) !== null) {
-	// 	this.value = date + '-';
-	// } else if (date.match(/^\d{4}\-\d{2}$/) !== null) {
-	// 	this.value = date + '-';
-	// }
-
 	function setListener() {
 		const that = this
-		this.target = document.getElementById(this.options.target);
+		this.target = document.getElementById(this.options.target.slice(1));
+		this.target.addEventListener('focus', firstLetter.bind(this));
 		this.target.addEventListener('keyup', function() {
+			let key = event.keyCode || event.charCode;
+    		if( key == 8 || key == 46 ){
+				defaultVars.call(that);
+				that.findFormat();
+			}
 			that.replaceCheck();
 		});
+	}
+
+	function defaultVars() {
+		this.format = "";
+		this.count = 0;
+		this.formats = [];
+		this.target.value = "";
+	}
+
+	function firstLetter() {
+		if (this.formats[0][3] == "0") {
+			this.target.value = this.formats[0][6];
+			this.formats.splice(0,1);
+		}
 	}
 
 	function extendDefault(source, properties) {

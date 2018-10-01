@@ -24,6 +24,12 @@ const validation = new Validations({
 	notifyId: "#message"
 })
 
+const mask = new Mask({
+	autoExecute: true,
+	format: "(00) 0000-0000",
+	target: "#telefone"
+});
+
 $("#trigger").on('click', function(){
 	$("#content").modal();
 });

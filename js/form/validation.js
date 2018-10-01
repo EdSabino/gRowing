@@ -55,16 +55,31 @@
         let fields = type.fields;
         for (let i = 0; i < fields.length; i++) {
             let field = document.getElementById(fields[i].slice(1));
+            debugger;
             this.formSubmit.addEventListener("click", validatePresence.bind(this, field));
         }
     }
 
     function validatePresence(field) {
+        const parent = setParent(field);
+        parent.getElementsByClassName("error")[0].remove();
         if (field.value == "") {
             event.preventDefault();
             let error = setErrorPresence.call(this, field);
             field.classList.add("error-input");
-            field.parentNode.appendChild(error);
+            parent.appendChild(error);
+        }else {
+            let div = document.createElement("div")
+            div.classList.add("error");
+            parent.appendChild(div);
+        }
+    }
+
+    function setParent(field) {
+        if (field.classList.contains("prepend") || field.classList.contains("append")) {
+            return field.parentNode.parentNode;
+        }else {
+            return field.parentNode;
         }
     }
 
