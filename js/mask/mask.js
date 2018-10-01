@@ -101,9 +101,11 @@
 	}
 
 	function firstLetter() {
-		if (this.formats[0][3] == "0") {
-			this.target.value = this.formats[0][6];
-			this.formats.splice(0,1);
+		if (this.target.value == "") {
+			if (this.formats[0][3] == "0") {
+				this.target.value = this.formats[0][6];
+				this.formats.splice(0,1);
+			}
 		}
 	}
 
