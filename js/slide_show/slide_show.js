@@ -10,7 +10,7 @@
 			timeAuto: 3000,
 			autoExecute: false,
 			slideCount: true,
-			dots: true,
+			mode: "slideShow"
 		}
 
 		if (arguments[0] && typeof arguments[0] === "object") {
@@ -25,27 +25,56 @@
 	}
 
 	SlideShow.prototype.execute = function() {
-		buildOut.call(this);
+		buildOutSlides.call(this);
 		showSlides(0);
 		if (this.options.auto == true) {
 			setSlideTime.call(this);
 		}
 	}
 
-	function buildOut() {
-		var container = buildSlide.call(this);
-		if (this.options.dots){
-			var dots = buildDots.call(this);
-		}
+	function buildOutSlides() {
+		const container = buildSlide.call(this);
+		const bottomPart = buildBottomPart.call(this);
+		debugger;
 		var target = document.getElementById(this.options.target);
 		target.appendChild(container);
-		if (this.options.dots) {target.appendChild(dots);}
+		target.appendChild(bottomPart);
+	}
+
+	function buildBottomPart() {
+		if (this.options.mode == "slideShow"){
+			return buildDots.call(this);
+		}else if (this.options.mode == "slideShowGallery"){
+			return buildGallery.call(this);
+		}else {
+			return document.createElement("div");
+		}
+	}
+
+	function buildGallery() {
+	  let images = document.createElement("div");
+	  images.classList.add("gallery");
+	  for (let i = 0; i < this.options.imagesUrl.length; i++) {
+		  let imageContent = document.createElement("div");
+		  let image = document.createElement("img")
+		  imageContent.classList.add("gallery-image");
+		  imageContent.style.width = 100/this.options.imagesUrl.length + "%";
+		  imageContent.dataset.position = i;
+		  imageContent.addEventListener('click', function() {
+			  currentSlide(this.dataset.position)
+		  });
+		  image.classList.add("img-wrap");
+		  image.setAttribute("src", this.options.imagesUrl[i]);
+		  imageContent.appendChild(image);
+		  images.appendChild(imageContent);
+	  }
+	  return images
 	}
 
 	function buildDots() {
-		var dots = document.createElement("div")
+		let dots = document.createElement("div")
 		dots.classList.add("dots");
-		for (var i = 0; i < this.options.imagesUrl.length; i++) {
+		for (let i = 0; i < this.options.imagesUrl.length; i++) {
 			var dot = document.createElement("span");
 			dot.classList.add("dot");
 			dot.dataset.position = i;

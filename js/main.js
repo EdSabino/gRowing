@@ -41,7 +41,9 @@ const sidebar = new SideBar({
 	autoExecute: true
 })
 
-$("#slideshow").slide_show();
+$("#slideshow").slide_show({
+	mode: "slideShowGallery"
+});
 
 $("#trigger_message").on("click", function() {
 	$("#message").notify({

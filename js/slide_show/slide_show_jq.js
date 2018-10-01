@@ -15,7 +15,7 @@
 			timeAuto: 3000,
 			autoExecute: true,
 			slideCount: true,
-			dots: true,
+			mode: "slideShow",
 		}, options );
 
 		var mySlideShow = new SlideShow(opts);

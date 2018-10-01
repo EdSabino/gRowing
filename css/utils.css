@@ -62,3 +62,15 @@
 .inline {
 	display: inline-block;
 }
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
