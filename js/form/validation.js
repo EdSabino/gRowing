@@ -2,15 +2,17 @@
 
     this.Validations = function() {
         this.formSubmit = null;
+        this.fullMessages = "";
 
         const defaults = {
             form: "",
-            byData: false,
             validations: [{
                 validationType: "",
                 fields: []
             }],
-            autoExecute: false
+            autoExecute: false,
+            notify: false,
+            notifyId: ""
         }
 
         if (arguments[0] && typeof arguments[0] === "object") {
@@ -19,11 +21,11 @@
 
         this.formSubmit = setAttributes.call(this, this.options.form).querySelector('button[type="submit"]');
         if (this.options.autoExecute == true) {
-            buildValidations.call(this);
+            this.buildValidations();
         }
     }
 
-    function buildValidations() {
+    Validations.prototype.buildValidations = function() {
         let validations = this.options.validations;
         for (let i = 0; i < validations.length; i++){
             setValidations.call(this, validations[i]);
@@ -51,7 +53,6 @@
 
     function addPresence(type) {
         let fields = type.fields;
-        debugger;
         for (let i = 0; i < fields.length; i++) {
             let field = document.getElementById(fields[i].slice(1));
             this.formSubmit.addEventListener("click", validatePresence.bind(this, field));
@@ -61,17 +62,28 @@
     function validatePresence(field) {
         if (field.value == "") {
             event.preventDefault();
-            let error = setErrorPresence();
-            debugger;
+            let error = setErrorPresence.call(this, field);
+            field.classList.add("error-input");
             field.parentNode.appendChild(error);
         }
     }
 
-    function setErrorPresence() {
+    function setErrorPresence(field) {
         let div = document.createElement("div")
         div.classList.add("error");
-        div.innerHTML = "Esse campo precisa ser preenchido";
+        div.innerHTML = capFirsLet(field.id) + " precisa ser preenchido";
+        if (this.fullMessages != "") {
+            this.fullMessages += ", ";
+        }
+        this.fullMessages += div.innerHTML;
+        if (this.options.notify == true) {
+            document.getElementById(this.options.notifyId.slice(1)).innerHTML = this.fullMessages;
+        }
         return div;
+    }
+
+    function capFirsLet(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     function extendDefault(source, properties) {

@@ -6,7 +6,7 @@
 			options.content = this[0]
 		}else {
 			if (options.content == undefined) {
-				options.content = this[0]	
+				options.content = this[0]
 			} else{
 				if (options.content instanceof jQuery) {
 					options.content = options.content[0];
@@ -16,13 +16,6 @@
 					}
 				}
 			}
-		}
-		if (typeof options.content === "object") {
-			cloneNode = $(options.content).clone();
-			if (cloneNode.is(":hidden")) {
-				cloneNode[0].style.display = "block"
-			}
-			options.content = cloneNode[0];
 		}
 		var opts = $.extend({
 			autoOpen: true,

@@ -11,6 +11,17 @@ const accordion = new Accordion({
 	target: "#accordion",
 	autoExecute: true,
 	onlyOne: true
+});
+
+const validation = new Validations({
+	form: "#form",
+	validations: [{
+		validationType: "presence",
+		fields: ["#name", "#telefone", "#email"]
+	}],
+	autoExecute: true,
+	notify: true,
+	notifyId: "#message"
 })
 
 $("#trigger").on('click', function(){
@@ -19,15 +30,7 @@ $("#trigger").on('click', function(){
 
 $("#content").formFormat();
 
-const validation = new Validations({
-	form: "#form",
-	byData: false,
-	validations: [{
-		validationType: "presence",
-		fields: ["#name", "#telefone", "#email"]
-	}],
-	autoExecute: true
-})
+
 const sidebar = new SideBar({
 	autoExecute: true
 })
@@ -35,5 +38,7 @@ const sidebar = new SideBar({
 $("#slideshow").slide_show();
 
 $("#trigger_message").on("click", function() {
-	$("#message").notify();
+	$("#message").notify({
+		type: "red"
+	});
 });

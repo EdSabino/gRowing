@@ -1,5 +1,6 @@
 :root {
-	--error: #981a26;
+	--error-legend: #981a26;
+	--error-focus: #d2535f;
 }
 
 .form-row {
@@ -121,8 +122,20 @@
 }
 
 .error {
-	color: var(--error);
+	color: var(--error-legend);
 	font-weight: bold;
 	width: 100%;
-	margin-top: 7px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.input.error-input:focus {
+	outline: none !important;
+    border-color: var(--error-focus);
+    box-shadow: 0 0 10px var(--error-focus);
+    -webkit-transition: 1ms opacity ease;
+	-moz-transition: 1ms opacity ease;
+	-ms-transition: 1ms opacity ease;
+	-o-transition: 1ms opacity ease;
+	transition: 1ms opacity ease;
 }

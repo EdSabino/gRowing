@@ -8,7 +8,7 @@
 		this.transitionEnd = transitionSelect();
 
 		// propriedades aceitaveis
-		var defaults = {
+		const defaults = {
 			autoOpen: false,
 			className: 'fade-n-drop',
 			closeButton: true,
@@ -16,8 +16,7 @@
 			content: "",
 			maxWidth: 600,
 			minWidth: 280,
-			overlay: true,
-			afterExecute: []
+			overlay: true
 		}
 
 
@@ -137,13 +136,6 @@
 		document.body.appendChild(docFrag);
 	}
 
-	function afterExecute() {
-		const functions = this.options.afterExecute;
-		for (let i = 0; i < functions; i++) {
-			let tmpFunc = new Function(functions[i]);
-			tmpFunc();
-		}
-	}
 
 	// Listeners
 
