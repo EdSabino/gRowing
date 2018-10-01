@@ -5,6 +5,9 @@
 	--color-red-notify: #efc4c8;
 	--color-red-bord: #ca979d;
 	--red-notify: #721c24;
+	--color-yellow-notify: #fff3cd;
+	--color-yellow-bord: #d6c593;
+	--yellow-notify: #8e660d;
 }
 
 .box-notify {
@@ -27,6 +30,12 @@
 	background-color: var(--color-red-notify);
 	border-color: var(--color-red-bord);
 	color: var(--red-notify);
+}
+
+.yellow-notify {
+	background-color: var(--color-yellow-notify);
+	border-color: var(--color-yellow-bord);
+	color: var(--yellow-notify);
 }
 
 .float-notify {
@@ -61,7 +70,7 @@
 }
 
 .box-notify.top.fade-n-drop.notify-open {
-	
+
 	-webkit-transition: 250ms top 250ms ease;
 	-moz-transition: 250ms top 250ms ease;
 	-ms-transition: 250ms top 250ms ease;
@@ -91,7 +100,7 @@
 }
 
 .box-notify.bottom.fade-n-drop.notify-open {
-	
+
 	-webkit-transition: 250ms top 250ms ease;
 	-moz-transition: 250ms top 250ms ease;
 	-ms-transition: 250ms top 250ms ease;

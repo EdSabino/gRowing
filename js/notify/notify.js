@@ -1,3 +1,4 @@
+// types: green, red, yellow
 (function() {
 
 	this.Notify = function() {
@@ -51,7 +52,7 @@
 
 	function extendDefault(source, properties) {
 		var property;
-		// vai rodar por todos os argumentos que foram passados em forma de objeto {}, se fr uma propriedade valida e suportavel, 
+		// vai rodar por todos os argumentos que foram passados em forma de objeto {}, se fr uma propriedade valida e suportavel,
 		// ela sera reescrita
 		for (property in properties) {
 			// aqui valida
@@ -81,7 +82,7 @@
 
 	function buildMessage() {
 		var message = document.createElement("div");
-		message.className = this.options.classMessage + " message-notify-float";	
+		message.className = this.options.classMessage + " message-notify-float";
 		message.innerHTML = this.options.message
 		return message
 	}

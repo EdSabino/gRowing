@@ -27,7 +27,7 @@ body {
     box-sizing: border-box;
     cursor: pointer;
     float: left;
-    position: relative;
+    position: fixed;
     top: 40%;
 }
 

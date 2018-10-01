@@ -45,6 +45,6 @@ $("#slideshow").slide_show();
 
 $("#trigger_message").on("click", function() {
 	$("#message").notify({
-		type: "red"
+		type: "yellow"
 	});
 });
