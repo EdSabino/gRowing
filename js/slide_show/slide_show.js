@@ -3,10 +3,10 @@
 
 	this.SlideShow = function(){
 
-		var defaults = {
+		const defaults = {
 			target: '',
 			imagesUrl: [],
-			auto: false, 
+			auto: false,
 			timeAuto: 3000,
 			autoExecute: false,
 			slideCount: true,
@@ -76,7 +76,7 @@
 			slide.appendChild(image);
 			container.appendChild(slide);
 		}
-		
+
 		previus.classList.add("prev");
 		previus.innerHTML = "\&#10094;"
 		previus.addEventListener('click', function() {
@@ -94,7 +94,7 @@
 
 	function extendDefault(source, properties) {
 		var property;
-		// vai rodar por todos os argumentos que foram passados em forma de objeto {}, se fr uma propriedade valida e suportavel, 
+		// vai rodar por todos os argumentos que foram passados em forma de objeto {}, se fr uma propriedade valida e suportavel,
 		// ela sera reescrita
 		for (property in properties) {
 			// aqui valida
@@ -133,9 +133,9 @@
 		if (position > slides.length-1) {position = 0}
 		for (i = 0; i < slides.length; i++) {
 			if (i != position) {
-				slides[i].style.display = "none"; 
+				slides[i].style.display = "none";
 			} else {
-				slides[i].style.display = "block"; 
+				slides[i].style.display = "block";
 			}
 		}
 		for (i = 0; i < dots.length; i++) {

@@ -4,6 +4,7 @@
 		this.closeButton = null;
 		this.modal = null;
 		this.overlay = null;
+		this.markOld = null;
 		// define a transicao
 		this.transitionEnd = transitionSelect();
 
@@ -31,8 +32,9 @@
 	}
 
 	Modal.prototype.open = function() {
-		var temp_class;
-
+		let temp_class;
+		this.markOld = document.createElement("div");
+		this.options.content.parentNode.insertBefore(this.markOld, this.options.content)
 		// builda o modal
 		buildOut.call(this);
 
@@ -53,16 +55,16 @@
 		this.modal.className = this.modal.className + temp_class;
 		this.overlay.className = this.overlay.className + " modal-open"
 		setForm.call(this);
-		afterExecute.call(this);
 	}
 
 	Modal.prototype.close = function() {
 		that = this;
-
+		this.markOld.parentNode.insertBefore(this.options.content, this.markOld);
+		this.markOld.remove();
 		// retira as classes de abertura
 		this.modal.className = this.modal.className.replace(" modal-open", "");
 		this.overlay.className = this.overlay.className.replace(" modal-open", "");
-
+		debugger;
 		// Ok, essa parte é doida, não podemos fechar tudo antes da animação acabar, entao vms fazer um
 		// listener pra descobrir quando ela acaba
 		this.modal.addEventListener(this.transitionEnd, function() {
