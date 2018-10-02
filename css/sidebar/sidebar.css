@@ -30,6 +30,7 @@ body {
     float: left;
     position: fixed;
     top: 40%;
+    transition: .5s;
 }
 
 .button-open-sidebar:hover {
@@ -90,6 +91,13 @@ body {
 .main {
     transition: margin-left .5s;
     padding: 22px;
+}
+
+.hide-button {
+    width: 0px;
+    padding: 0px;
+    margin: 0px;
+    content: "";
 }
 
 @media screen and (max-height: 450px) {

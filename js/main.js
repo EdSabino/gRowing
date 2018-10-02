@@ -16,7 +16,7 @@ const accordion = new Accordion({
 const validation = new Validations({
 	form: "#form",
 	validations: [{
-		validationType: "maxLength",
+		validationType: "minLength",
 		fields: [{
 			name: "#name",
 			value: 12

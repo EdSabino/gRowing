@@ -44,11 +44,13 @@
     }
 
     function showButton(buttonOpen) {
-        this.buttonOpen.classList.remove("hide");
+        this.buttonOpen.firstElementChild.classList.remove("hide");
+        this.buttonOpen.classList.remove("hide-button");
     }
 
     function hideButton(buttonOpen) {
-        this.buttonOpen.classList.add("hide");
+        this.buttonOpen.firstElementChild.classList.add("hide");
+        this.buttonOpen.classList.add("hide-button");
     }
 
     function controlNav() {
