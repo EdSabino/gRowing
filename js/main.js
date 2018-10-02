@@ -16,8 +16,17 @@ const accordion = new Accordion({
 const validation = new Validations({
 	form: "#form",
 	validations: [{
-		validationType: "presence",
-		fields: ["#name", "#telefone", "#email"]
+		validationType: "maxLength",
+		fields: [{
+			name: "#name",
+			value: 12
+		}, {
+			name: "#telefone",
+			value: 5
+		}, {
+			name: "#email",
+			value: 7
+		}]
 	}],
 	autoExecute: true,
 	notify: true,

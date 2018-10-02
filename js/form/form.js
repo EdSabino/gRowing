@@ -3,6 +3,7 @@
 	this.FormFormat = function() {
 		this.appends = null
 		this.prepends = null
+
 		var defaults = {
 			autoExecute: false,
 			scope: document
