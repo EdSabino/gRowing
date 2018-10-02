@@ -3,9 +3,10 @@ body {
 }
 
 .for-hover-side {
+    position: fixed;
     display: inline-block;
     width: 20px;
-    height: 100%;
+    height: 100vh;
     float: left;
     transition: margin-left .5s;
 }

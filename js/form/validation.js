@@ -53,10 +53,16 @@
 
     function addPresence(type) {
         let fields = type.fields;
+        this.formSubmit.addEventListener("click", annFullMessage.bind(this));
         for (let i = 0; i < fields.length; i++) {
             let field = document.getElementById(fields[i].slice(1));
             this.formSubmit.addEventListener("click", validatePresence.bind(this, field));
         }
+    }
+
+    function annFullMessage() {
+        debugger;
+        this.fullMessages = "";
     }
 
     function validatePresence(field) {

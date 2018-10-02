@@ -1,0 +1,79 @@
+.table-striped tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr, .table-striped tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:hover, .table-striped tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+.table th, .table td, .table-striped th, .table-striped td {
+    text-align: left;
+    padding: 16px;
+}
+.table, .table-striped {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.table-content {
+    width: 100%;
+}
+
+.col, .col-1, .col-2, .col-3 .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10  {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    min-width: 1%;
+}
+
+.col-1 {
+    min-width: 10%;
+}
+
+.col-2 {
+    min-width: 20%;
+}
+
+.col-3 {
+    min-width: 30%;
+}
+
+.col-4 {
+    min-width: 40%;
+}
+
+.col-5 {
+    min-width: 50%;
+}
+
+.col-6 {
+    min-width: 60%;
+}
+
+.col-7 {
+    min-width: 70%;
+}
+
+.col-8 {
+    min-width: 80%;
+}
+
+.col-9 {
+    min-width: 90%;
+}
+
+.col-10 {
+min-width: 100%;
+}
