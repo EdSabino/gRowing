@@ -59,3 +59,7 @@ $("#trigger_message").on("click", function() {
 		type: "yellow"
 	});
 });
+
+graph = new Graph({
+	target: "#graph"
+})
