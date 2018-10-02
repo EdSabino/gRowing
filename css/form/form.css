@@ -1,6 +1,7 @@
 :root {
 	--error-legend: #981a26;
 	--error-focus: #d2535f;
+	--desativado: #ccc;
 }
 
 .form-row {
@@ -160,7 +161,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #ccc;
+	background-color: var(--desativado);
 	-webkit-transition: .4s;
 	transition: .4s;
 }
@@ -178,11 +179,11 @@
 }
 
 input:checked + .slider {
-	background-color: #2196F3;
+	background-color: var(--usual-blue);
 }
 
 input:focus + .slider {
-	box-shadow: 0 0 1px #2196F3;
+	box-shadow: 0 0 1px var(--blue-focus);
 }
 
 input:checked + .slider:before {

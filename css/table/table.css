@@ -1,24 +1,31 @@
+:root {
+    --grey-hover: #e0e0e0;
+    --grey-border: #ddd;
+    --grey-stripped: #f2f2f2;
+}
+
 .table-striped tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--grey-stripped);
 }
 
 .table tr, .table-striped tr {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--grey-border);
 }
 
 .table tbody tr:hover, .table-striped tbody tr:hover {
-    background-color: #e0e0e0;
+    background-color: var(--grey-hover);
 }
 
 .table th, .table td, .table-striped th, .table-striped td {
     text-align: left;
     padding: 16px;
 }
+
 .table, .table-striped {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid var(--grey-border);
 }
 
 .table-content {
@@ -75,5 +82,5 @@
 }
 
 .col-10 {
-min-width: 100%;
+    min-width: 100%;
 }

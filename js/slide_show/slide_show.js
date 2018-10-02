@@ -61,7 +61,7 @@
 		  imageContent.style.width = 100/this.options.imagesUrl.length + "%";
 		  imageContent.dataset.position = i;
 		  imageContent.addEventListener('click', function() {
-			  currentSlide(this.dataset.position)
+			  currentSlide(parseInt(this.dataset.position))
 		  });
 		  image.classList.add("img-wrap");
 		  image.setAttribute("src", this.options.imagesUrl[i]);
@@ -80,7 +80,7 @@
 			dot.classList.add("botton");
 			dot.dataset.position = i;
 			dot.addEventListener('click', function() {
-				currentSlide(this.dataset.position)
+				currentSlide(parseInt(this.dataset.position))
 			});
 			dots.appendChild(dot);
 		}
@@ -157,6 +157,7 @@
 	}
 
 	function showSlides(position) {
+		debugger;
 		let slides = document.getElementsByClassName("mySlides");
 		let dots = document.getElementsByClassName("botton");
 		if (position < 0) {position = slides.length-1}
