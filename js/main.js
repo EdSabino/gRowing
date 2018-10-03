@@ -16,17 +16,8 @@ const accordion = new Accordion({
 const validation = new Validations({
 	form: "#form",
 	validations: [{
-		validationType: "minLength",
-		fields: [{
-			name: "#name",
-			value: 12
-		}, {
-			name: "#telefone",
-			value: 5
-		}, {
-			name: "#email",
-			value: 7
-		}]
+		validationType: "presence",
+		fields: ["#name", "#telefone", "#email"]
 	}],
 	autoExecute: true,
 	notify: true,
@@ -59,7 +50,40 @@ $("#trigger_message").on("click", function() {
 		type: "yellow"
 	});
 });
-
-graph = new Graph({
-	target: "#graph"
+const autoComplete = new AutoComplete({
+	target: "#name",
+	variables: ["eduardo", "sabino", "da", "silva"],
+	autoExecute: true
 })
+// graph = new Graph({
+// 	target: "#graph",
+// 	graphTitle: "Esse é um grafico",
+// 	categories: [
+// 		"banana",
+// 		"maças",
+// 		"uvas?"
+// 	],
+// 	series: [
+// 		{
+// 			values: [1,2,3],
+// 			color: "red",
+// 			label: "homem"
+// 		},
+// 		{
+// 			values: [3,4,5],
+// 			color: "red",
+// 			label: "mulher"
+// 		},
+// 		{
+// 			values: [3,4,5],
+// 			color: "red",
+// 			label: "mulher"
+// 		},
+// 		{
+// 			values: [3,4,5],
+// 			color: "red",
+// 			label: "mulher"
+// 		}
+// 	],
+// 	type: "point"
+// })
