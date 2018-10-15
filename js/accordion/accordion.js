@@ -63,18 +63,18 @@
             for (let i = 0; i < elements.length; i++) {
                 let actual = elements[i];
                 actual.addEventListener("click", function() {
-                    if (this.parentNode.getElementsByClassName("accord-text")[0].classList.contains("hide")) {
+                    if (!this.parentNode.getElementsByClassName("accord-text")[0].classList.contains("accord-open")) {
                         if (onlyOne == true) {
                             let groups = this.parentNode.parentNode.getElementsByClassName("accord-group")
                             for (let j = 0; j < groups.length; j++) {
                                 let title = groups[j].getElementsByClassName("accord-title")[0]
                                 title.classList.add("close");
-                                title.parentNode.getElementsByClassName("accord-text")[0].classList.add("hide")
+                                title.parentNode.getElementsByClassName("accord-text")[0].classList.remove("accord-open")
                             }
                         }
                     }
                     this.classList.toggle("close");
-                    this.parentNode.getElementsByClassName("accord-text")[0].classList.toggle("hide");
+                    this.parentNode.getElementsByClassName("accord-text")[0].classList.toggle("accord-open");
                 });
             }
         }

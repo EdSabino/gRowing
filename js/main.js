@@ -30,6 +30,8 @@ const mask = new Mask({
 	target: "#telefone"
 });
 
+const select = new Select();
+
 $("#trigger").on('click', function(){
 	$("#content").modal();
 });

@@ -26,7 +26,9 @@
 }
 
 [class^="ico-"]:before,
-[class*=" ico-"]:before {
+[class*=" ico-"]:before,
+[class^="ico-"]:after,
+[class*=" ico-"]:after {
   font-family: "untitled-font-1" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -38,15 +40,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ico-down-after:after {
+  content: "\61";
+}
+
 .ico-down:before {
   content: "\61";
 }
+
 .ico-left:before {
   content: "\62";
 }
 .ico-right:before {
   content: "\63";
 }
+
+.ico-up-after:after {
+  content: "\64";
+}
+
 .ico-up:before {
   content: "\64";
 }

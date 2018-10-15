@@ -1,3 +1,6 @@
+@import url("images.css");
+@import url("grid/grid.css");
+
 :root {
 	font-family: Arial, Helvetica, sans-serif !important;
 	--grey: #ced4da;
@@ -15,6 +18,8 @@
 	--not-so-black: #2b2a2a;
 	--medium-grey: #444343;
 }
+
+
 
 .hide {
 	display: none;

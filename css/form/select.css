@@ -1,0 +1,68 @@
+.select {
+    position: relative;
+    width: 100%;
+}
+
+.select select {
+    display: none;
+}
+
+.select-selected {
+    border-radius: .25rem;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--grey);
+	min-width: 5%;
+	color: var(--black);
+	padding: 10px;
+	font-size: 16px;
+	margin-right: 9px;
+	flex: 1 1 auto;
+	background-clip: padding-box;
+	-webkit-transition: 1ms opacity ease;
+	-moz-transition: 1ms opacity ease;
+	-ms-transition: 1ms opacity ease;
+	-o-transition: 1ms opacity ease;
+	transition: 1ms opacity ease;
+    background-color: var(--white);
+}
+
+.ico-down-after:after, .ico-up-after:after {
+    position: absolute;
+    right: 0px;
+    margin-right: 12px;
+}
+
+.select-selected.ico-up-after {
+    border-radius: .25rem .25rem 0 0;
+}
+
+.select-options div,.select-selected {
+    color: var(--black);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.select-options {
+    position: absolute;
+    background-color: var(--white);
+    border: none;
+    margin-right: 9px;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+}
+
+.select-open {
+    max-height: 500px;
+    transition: max-height 0.15s ease-in;
+    border: 1px solid var(--grey);
+    border-top: none;
+    border-radius: 0 0 .25rem .25rem;
+}
+.select-options div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}

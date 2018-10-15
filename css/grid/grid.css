@@ -1,0 +1,68 @@
+@import url("squares.css");
+@import url("sizes.css");
+
+[class^="col-"],
+[class*=" col-"], .col {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.col-shrink {
+    flex: 0 1 auto;
+}
+
+.col-grow {
+    flex: 1 0 auto;
+}
+
+.col {
+    min-width: 1%;
+}
+
+.col-1 {
+    min-width: 10%;
+}
+
+.col-2 {
+    min-width: 20%;
+}
+
+.col-3 {
+    min-width: 30%;
+}
+
+.col-4 {
+    min-width: 40%;
+}
+
+.col-5 {
+    min-width: 50%;
+}
+
+.col-6 {
+    min-width: 60%;
+}
+
+.col-7 {
+    min-width: 70%;
+}
+
+.col-8 {
+    min-width: 80%;
+}
+
+.col-9 {
+    min-width: 90%;
+}
+
+.col-10 {
+    min-width: 100%;
+}
+
+.row {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
