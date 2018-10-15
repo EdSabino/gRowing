@@ -33,7 +33,11 @@ const mask = new Mask({
 const select = new Select();
 
 $("#trigger").on('click', function(){
-	$("#content").modal();
+	$("#content").modal({form: true});
+});
+
+$(".image-icon").on('click', function(){
+	$(this).modal({image: true});
 });
 
 $("#content").formFormat();

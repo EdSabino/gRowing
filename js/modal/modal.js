@@ -17,7 +17,9 @@
 			content: "",
 			maxWidth: 600,
 			minWidth: 280,
-			overlay: true
+			overlay: true,
+			form: false,
+			image: false
 		}
 
 
@@ -36,7 +38,11 @@
 		this.markOld = document.createElement("div");
 		this.options.content.parentNode.insertBefore(this.markOld, this.options.content)
 		// builda o modal
-		buildOut.call(this);
+		if (this.options.image){
+			buildOutImage.call(this);
+		}else{
+			buildOut.call(this);
+		}
 
 		// seta os eventos
 		initializeEvents.call(this);
@@ -54,13 +60,18 @@
 		// adiciona a classe de abertura ao modal e ao overlay
 		this.modal.className = this.modal.className + temp_class;
 		this.overlay.className = this.overlay.className + " modal-open"
-		setForm.call(this);
+		if (this.options.form) {
+			setForm.call(this);
+		}
 	}
 
 	Modal.prototype.close = function() {
 		that = this;
 		this.markOld.parentNode.insertBefore(this.options.content, this.markOld);
 		this.markOld.remove();
+		if (this.options.image){
+			this.options.content.style = "";
+		}
 		// retira as classes de abertura
 		this.modal.className = this.modal.className.replace(" modal-open", "");
 		this.overlay.className = this.overlay.className.replace(" modal-open", "");
@@ -77,7 +88,7 @@
 	}
 
 	function setForm() {
-		$(this.modal.getElementsByClassName("holder")[0].getElementsByTagName("form")[0].getElementsByTagName("input")[0]).focus();
+		this.modal.getElementsByClassName("holder")[0].getElementsByTagName("form")[0].getElementsByTagName("input")[0].focus();
 	}
 
 	function extendDefault(source, properties) {
@@ -129,6 +140,34 @@
 		contentHolder.className = "holder";
 		contentHolder.appendChild(content);
 		this.modal.appendChild(contentHolder);
+
+		// adiciona o this.modal ao fragmento
+		docFrag.appendChild(this.modal);
+
+		// coloca o fragmento no body
+		document.body.appendChild(docFrag);
+	}
+
+	function buildOutImage() {
+		// É no docFrag que o modal é construido, é ele que é colocado na tela, content, é o content neh
+		var content, contentHolder, docFrag;
+
+		content = this.options.content;
+		content.style.width = "100%";
+		// cria o fragmento
+		docFrag = document.createDocumentFragment();
+
+		// Cria o modal propriamente dito, com tudo que precisa
+		this.modal = document.createElement("div");
+		this.modal.className = "modal " + this.options.className;
+		this.modal.style.width = "95%";
+
+		// Cria a tela escura no fundo do modal
+		this.overlay = document.createElement("div");
+		this.overlay.className = "overlay " + this.options.className;
+		docFrag.appendChild(this.overlay);
+
+		this.modal.appendChild(content);
 
 		// adiciona o this.modal ao fragmento
 		docFrag.appendChild(this.modal);

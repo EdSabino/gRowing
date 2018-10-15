@@ -16,7 +16,7 @@
 }
 
 .modal {
-	position: absolute;
+	position: fixed;
 	z-index: 9999;
 	top: 50%;
 	left: 50%;
@@ -93,7 +93,7 @@
 
 .modal.fade-n-drop.modal-open {
 	top: 50%;
-	
+
 	-webkit-transition: 500ms top 500ms ease;
 	-moz-transition: 500ms top 500ms ease;
 	-ms-transition: 500ms top 500ms ease;
