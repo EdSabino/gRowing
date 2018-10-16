@@ -1,8 +1,14 @@
+.content-holder-autocomplete {
+    position: relative;
+    width: 100%;
+}
 .autocomplete-box {
+    position: absolute;
     display: inline-block;
     z-index: 9999999;
-    width: 100%;
     border: 1px solid var(--grey);
+    left: 0;
+    right: 0;
     border-top: none;
     margin-right: 9px;
     border-radius: 0 0 .25rem .25rem;

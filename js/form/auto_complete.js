@@ -39,11 +39,14 @@
     }
 
     function buildOptions() {
+        let father = document.createElement("div");
+        father.classList.add("content-holder-autocomplete")
         this.content = document.createElement("div");
         this.content.setAttribute("id", (this.target.id + "autocomplete"));
         this.content.setAttribute("class", "autocomplete-box");
+        father.appendChild(this.content)
         this.target.classList.add("with-autocomplete")
-        this.target.parentNode.insertBefore(this.content, this.target.nextSibling);
+        this.target.parentNode.insertBefore(father  , this.target.nextSibling);
         for (let i = 0; i < this.arr.length; i++) {
             let field = this.arr[i];
             populateList.call(this, field);
@@ -116,7 +119,7 @@
     function closeAllList() {
         let list = document.getElementsByClassName("autocomplete-box");
         if (list.length > 0) {
-            list[0].parentNode.removeChild(list[0]);
+            list[0].parentNode.parentNode.removeChild(list[0].parentNode);
         }
         this.target.classList.remove("with-autocomplete");
     }
