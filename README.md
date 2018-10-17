@@ -69,9 +69,67 @@ const accordion = new Accordion({
 	onlyOne: true
 });
 ```
-
 ### Form
 The form module has many functionalities inside him;
+
+All code examples are based on that html, this html has the ideia of how the forms must be construct
+```html
+<div id="content" >
+	<form action="hahah" method="get" id="form">
+		<div class="form-row w-100">
+			<div class="form-col">
+				<label for="country" class="label required">Nome</label>
+				<input type="text" placeholder="country" id="country" class="input" autocomplete="new-password">
+				<!-- the autocomplete="new-password" is to avoid the chrome options -->
+				<div class="error">
+
+				</div>
+			</div>
+			<div class="form-col">
+				<label for="select" class="label">Dono</label>
+				<div class="select">
+					<select name="">
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+					</select>
+				</div>
+				<div class="error">
+
+				</div>
+			</div>
+		</div>
+		<div class="w-100 form-row">
+			<div class="form-col">
+				<label for="telefone" class="label">Telefone</label>
+				<input type="text" placeholder="telefone" id="telefone" class="input">
+				<div class="error">
+
+				</div>
+			</div>
+			<div class="form-col">
+				<label for="email" class="label">Email</label>
+				<input type="text" placeholder="email" id="email" data-cont="Ok" class="input prepend">
+				<div class="error">
+
+				</div>
+			</div>
+			<div class="form-col">
+				<label for="inscreverse" class="label">Inscrever-se</label>
+				<label class="switcher">
+					<input type="checkbox" checked>
+					<span class="slider round"></span>
+				</label>
+				<div class="error">
+
+				</div>
+			</div>
+		</div>
+		<button type="submit" name="button" class="btn btn-green">Submit</button>
+	</form>
+</div>
+```
 #### Validations
 Make the front validation of the passed fields
 ###### validations will contain all the validations will be made, the avaiable types are:
@@ -112,8 +170,9 @@ Just to give you the ability to NOT call that, he will stylize all the selects
 ```js
     const select = new Select();
 ```
-> FormFormat
+##### FormFormat
 A general class that can call all the functionalities, if you call him only whith autoExecute and scope, he will make the appends and prepends
+
 #### JavaScript
 ```js
 const form = new FormFormat({
