@@ -12,25 +12,12 @@ const accordion = new Accordion({
 	autoExecute: true,
 	onlyOne: true
 });
-
-const validation = new Validations({
-	form: "#form",
-	validations: [{
-		validationType: "presence",
-		fields: ["#name", "#telefone", "#email"]
-	}],
-	autoExecute: true,
-	notify: true,
-	notifyId: "#message"
-})
-
 const mask = new Mask({
 	autoExecute: true,
 	format: "(00) 0000-0000",
 	target: "#telefone"
 });
 
-const select = new Select();
 
 $("#trigger").on('click', function(){
 	$("#content").modal({form: true});
@@ -39,8 +26,29 @@ $("#trigger").on('click', function(){
 $(".image-icon").on('click', function(){
 	$(this).modal({image: true});
 });
+const form = new FormFormat({
+	scope: "#content",
+	autoExecute: true,
+	validate: true,
+	validation: {
+		form: "#form",
+		validations: [{
+			validationType: "presence",
+			fields: ["#name", "#telefone", "#email"]
+		}],
+		autoExecute: true,
+		notify: true,
+		notifyId: "#message"
+	},
+	autoComplete: true,
+	autoCompleteVars: {
+		target: "#name",
+		variables: ["eduardo", "sabino", "da", "silva"],
+		autoExecute: true
+	},
+	select: true
+});
 
-$("#content").formFormat();
 
 
 const sidebar = new SideBar({
@@ -56,11 +64,7 @@ $("#trigger_message").on("click", function() {
 		type: "yellow"
 	});
 });
-const autoComplete = new AutoComplete({
-	target: "#name",
-	variables: ["eduardo", "sabino", "da", "silva"],
-	autoExecute: true
-})
+
 // graph = new Graph({
 // 	target: "#graph",
 // 	graphTitle: "Esse é um grafico",

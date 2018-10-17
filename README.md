@@ -60,11 +60,82 @@ Here is an exemple of accordion:
 #### JavaScript
 The accordion, in the moment, has this 3 parameter, target, autoExecute, and onlyOne
 > target -> Indicates the mother class of the accordion
+
 > onlyOne -> When one accordion open, the others will close
 ```js
 const accordion = new Accordion({
 	target: "#accordion",
 	autoExecute: true,
 	onlyOne: true
+});
+```
+
+### Form
+The form module has many functionalities inside him;
+#### Validations
+Make the front validation of the passed fields
+###### validations will contain all the validations will be made, the avaiable types are:
+- Presence
+- MinLength
+- MaxLength
+
+The notify field identify an integration with another module, the Notfy :p
+
+```js
+const validation = new Validations({
+	form: "#form",
+	validations: [{
+		validationType: "presence",
+		fields: ["#name", "#telefone", "#email"]
+	}],
+	autoExecute: true,
+	notify: true,
+	notifyId: "#message"
+})
+```
+
+#### AutoComplete
+Allow to pass an array of values, and when a set field is typed, he will be auto fill (with options, obviusly);
+Variables will contain the possibles options to the auto complete
+
+```js
+const autoComplete = new AutoComplete({
+	target: "#country",
+	variables: ["Brazil", "USA", "Japan", "England"],
+	autoExecute: true
+})
+```
+
+#### Select
+Just to give you the ability to NOT call that, he will stylize all the selects
+(yes, make an internal search in the select is in the plans)
+```js
+    const select = new Select();
+```
+> FormFormat
+A general class that can call all the functionalities, if you call him only whith autoExecute and scope, he will make the appends and prepends
+#### JavaScript
+```js
+const form = new FormFormat({
+	scope: "#content",
+	autoExecute: true,
+	validate: true,
+	validation: {
+		form: "#form",
+		validations: [{
+			validationType: "presence",
+			fields: ["#name", "#telefone", "#email"]
+		}],
+		autoExecute: true,
+		notify: true,
+		notifyId: "#message"
+	},
+	autoComplete: true,
+	autoCompleteVars: {
+		target: "#country",
+		variables: ["Brazil", "USA", "Japan", "England"],
+		autoExecute: true
+	},
+	select: true
 });
 ```

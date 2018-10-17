@@ -77,6 +77,7 @@
     }
 
     function getTarget() {
+        debugger;
         return document.getElementById(this.options.target.slice(1));
     }
 
