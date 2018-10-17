@@ -1,0 +1,14 @@
+.navbar {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 8%;
+    z-index: 99999999;
+    background-color: var(--not-so-black);
+    margin-bottom: 5%;
+}
+
+.navbar:after {
+    content: "";
+}

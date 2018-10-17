@@ -12,3 +12,34 @@
 .image-icon {
     cursor: pointer;
 }
+
+.change-image {
+    position: relative;
+    border-radius: 50%;
+     overflow: hidden;
+}
+
+.change-content {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(transparent, #fff);
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.change-text {
+    color: var(--black);
+    position: relative;
+    font-weight: bold;
+    font-size: 22px;
+    top: 45%;
+    text-align: center;
+}
+
+.change-image:hover .change-content {
+    height: 100%;
+}
