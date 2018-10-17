@@ -1,12 +1,14 @@
 # gRowing
 
 gRowing is a collection of modules to construct a friendly front-end in web pages.
-Every module takes care of an specific job on the page, the ideia behind the modules is make the developer only import what he need.
+Every module takes care of an specific job on the page, the idea behind the modules is make the developer only import what he need.
 The current avaiable modules are:
 
 > Accordion
 
 > Forms
+
+> Mask
 
 > Grid
 
@@ -28,7 +30,7 @@ We have an standart parameter for all the plugins, the autoExecute, his function
 ### Accordion
 
 #### Html
-Here is an exemple of accordion:
+Here is an example of accordion:
 ```html
 <div class="accord-container w-100" id="accordion">
 	<div class="accord-group">
@@ -198,3 +200,18 @@ const form = new FormFormat({
 	select: true
 });
 ```
+
+### Mask
+Yeah boys, we have maks too :p
+
+Well, the mask dont have any style, or css, only the js, so, i will skip the HTML with the classes you need, and focus on the js, is preety simple
+First of all, or classic autoExecute, the format is simple, but dont miss judge, he has to be like that, the "0" will be the characterm anything else, we will considerate part of the mask, and the target is in  what field that should be put
+```js
+const mask = new Mask({
+	autoExecute: true,
+	format: "(00) 0000-0000",
+	target: "#telefone"
+});
+```
+
+### Grid
