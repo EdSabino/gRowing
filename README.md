@@ -215,3 +215,27 @@ const mask = new Mask({
 ```
 
 ### Grid
+In oposite of the last one, this, dosnt have any JS, only classes, so lets go by all of them:
+
+wrap give the ability to break rows, the col shrink and grow define if the div can only grow or only shrink, if only col, the div is able to grow and shrink
+the number after the col show the minimum size of the col in %
+```html
+<div class="row wrap">
+    <div class="col-10">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col col-grow">
+    </div>
+    <div class="col col-shrink">
+    </div>
+</div>
+```
+we have:
+```css
+.w-n {
+
+}
+```
+the n represent the size of the view width, the same apply to ```h-n```
+to make squares we use ``` sqr-n ``` n represent the size of the view height
