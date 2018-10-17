@@ -5,12 +5,19 @@ Every module takes care of an specific job on the page, the ideia behind the mod
 The current avaiable modules are:
 
 > Accordion
+
 > Forms
+
 > Grid
+
 > Images
+
 > Modal
+
 > Sidebar
+
 > Slides
+
 > Tables
 
 But relax, more are coming
