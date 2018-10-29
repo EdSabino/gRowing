@@ -239,3 +239,8 @@ we have:
 ```
 the n represent the size of the view width, the same apply to ```h-n```
 to make squares we use ``` sqr-n ``` n represent the size of the view height
+
+### Images
+The most part of the images are made to be used with grid, but you can use your own sizing method :p
+
+Well, we have basically 4 classes image-round, image-crop, image-icon and change-image

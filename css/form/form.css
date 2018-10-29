@@ -1,5 +1,6 @@
 @import url("select.css");
 @import url("slider.css");
+@import url("wizard.css");
 
 :root {
 	--error-legend: #981a26;

@@ -49,6 +49,21 @@ const form = new FormFormat({
 	select: true
 });
 
+const wizardValidation = new Validations({
+	form: "#form-wizard",
+	validations: [{
+		validationType: "presence",
+		fields: ["#login", "#password"]
+	}],
+	autoExecute: false,
+	notify: false,
+	notifyId: ""
+});
+
+const wizard = new Wizard({
+	target: "#form-wizard",
+	autoExecute: true
+});
 
 
 const sidebar = new SideBar({
