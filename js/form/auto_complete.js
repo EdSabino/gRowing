@@ -106,7 +106,6 @@
         removeActive.call(this, list);
         if (this.currentFocus >= list.length) this.currentFocus = 0;
         if (this.currentFocus < 0) this.currentFocus = (list.length - 1);
-        debugger;
         list[this.currentFocus].classList.add("autocomplete-active");
     }
 

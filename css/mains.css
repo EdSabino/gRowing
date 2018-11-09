@@ -1,5 +1,6 @@
 @import url("images/images.css");
 @import url("grid/grid.css");
+@import url("tooltip/tooltip.css");
 
 :root {
 	font-family: Arial, Helvetica, sans-serif !important;

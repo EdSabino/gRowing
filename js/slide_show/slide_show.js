@@ -157,7 +157,6 @@
 	}
 
 	function showSlides(position) {
-		debugger;
 		let slides = document.getElementsByClassName("mySlides");
 		let dots = document.getElementsByClassName("botton");
 		if (position < 0) {position = slides.length-1}

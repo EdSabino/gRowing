@@ -64,7 +64,6 @@
 	}
 
 	FormFormat.prototype.getElements = function() {
-		debugger;
 		this.appends = this.options.scope.getElementsByClassName("append");
 		this.prepends = this.options.scope.getElementsByClassName("prepend");
 		this.buidAppend();

@@ -39,7 +39,7 @@
 }
 
 .float-notify {
-	position: absolute;
+	position: fixed;
 	top: 20px;
 	left: 100; right: 100;
 	z-index: 99999;

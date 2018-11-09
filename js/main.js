@@ -49,23 +49,6 @@ const form = new FormFormat({
 	select: true
 });
 
-const wizardValidation = new Validations({
-	form: "#form-wizard",
-	validations: [{
-		validationType: "presence",
-		fields: ["#login", "#password"]
-	}],
-	autoExecute: false,
-	notify: false,
-	notifyId: ""
-});
-
-const wizard = new Wizard({
-	target: "#form-wizard",
-	autoExecute: true
-});
-
-
 const sidebar = new SideBar({
 	autoExecute: true
 })
@@ -80,35 +63,8 @@ $("#trigger_message").on("click", function() {
 	});
 });
 
-// graph = new Graph({
-// 	target: "#graph",
-// 	graphTitle: "Esse é um grafico",
-// 	categories: [
-// 		"banana",
-// 		"maças",
-// 		"uvas?"
-// 	],
-// 	series: [
-// 		{
-// 			values: [1,2,3],
-// 			color: "red",
-// 			label: "homem"
-// 		},
-// 		{
-// 			values: [3,4,5],
-// 			color: "red",
-// 			label: "mulher"
-// 		},
-// 		{
-// 			values: [3,4,5],
-// 			color: "red",
-// 			label: "mulher"
-// 		},
-// 		{
-// 			values: [3,4,5],
-// 			color: "red",
-// 			label: "mulher"
-// 		}
-// 	],
-// 	type: "point"
-// })
+const tooltip = new ToolTip({
+	autoExecute: true,
+	target: ".tooltiped",
+	text: "deu certo"
+})

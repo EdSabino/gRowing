@@ -124,7 +124,6 @@
     function validateMaxLength(field, valField) {
         const parent = setParent(field);
         parent.getElementsByClassName("error")[0].remove();
-        debugger;
         if (field.value.length > parseFloat(valField.value)) {
             event.preventDefault();
             let error = setErrorLength.call(this, field, valField, "menor");
@@ -166,7 +165,6 @@
     }
 
     function annFullMessage() {
-        debugger;
         this.fullMessages = "";
     }
 
